@@ -1,5 +1,7 @@
 from selene import browser, be, have, command
 from selenium.webdriver import Keys
+
+
 def test_successful_submit():
     browser.open('/automation-practice-form')
     browser.element('#firstName').should(be.blank).type('Evgenii')

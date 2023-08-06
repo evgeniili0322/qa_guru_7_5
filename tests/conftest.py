@@ -15,3 +15,4 @@ def browser_opt():
     yield
 
     browser.quit()
+    
