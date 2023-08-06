@@ -1,3 +1,4 @@
+import os
 from selene import browser, be, have, command
 from selenium.webdriver import Keys
 
@@ -21,7 +22,7 @@ def test_successful_submit():
     browser.element('#react-select-2-option-4').click()
     browser.element('[for=hobbies-checkbox-2]').click()
     browser.element('[for=hobbies-checkbox-3]').click()
-    browser.element('#uploadPicture').send_keys('/home/evgeniili/IdeaProjects/qa_guru_7_5/tests/resources/test.png')
+    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/test.png'))
     browser.element('#currentAddress').should(be.blank).type('Odesskaya, bld. 24, appt. 23')
     browser.element('#react-select-3-input').type('u').press_enter()
     browser.element('#react-select-4-input').type('').send_keys(Keys.ARROW_DOWN).press_enter()
